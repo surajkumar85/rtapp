@@ -1,32 +1,11 @@
+import { Action } from "../actions";
+import { ActionType } from "../action-types";
+
 interface RepositoriesState {
   loading: boolean;
   error: string | null;
   data: string[];
 }
-
-enum ActionType {
-  SEARCH_REPOISTORIES = "search_repoistories",
-  SEARCH_REPOISTORIES_ERROR = "search_repoistories_error",
-  SEARCH_REPOISTORIES_SUCCESS = "search_repoistories_success",
-}
-
-interface SearchRepoistoriesAction {
-  type: ActionType.SEARCH_REPOISTORIES;
-}
-
-interface SearchRepoistoriesErrorAction {
-  type: ActionType.SEARCH_REPOISTORIES_ERROR;
-  payload: string;
-}
-interface SearchRepoistoriesSuccessAction {
-  type: ActionType.SEARCH_REPOISTORIES_SUCCESS;
-  payload: string[];
-}
-
-type Action =
-  | SearchRepoistoriesAction
-  | SearchRepoistoriesErrorAction
-  | SearchRepoistoriesSuccessAction;
 
 export default function reducer(
   state: RepositoriesState,
